@@ -41,3 +41,5 @@ class Solution(object):
         resul = ''.join(res)
         return resul
                 
+#  https://leetcode.com/problems/merge-strings-alternately/
+#  created by Luiz Paulo Oliveira Pereira da Silveira, apr/2023
