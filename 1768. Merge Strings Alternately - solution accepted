@@ -1,0 +1,43 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        str1len = len(word1)
+        str2len = len(word2)
+        res = []
+        diff = 0
+        bigger = 0
+        if (str1len >= str2len):
+            diff = str1len - str2len
+            bigger = 1
+        else:
+            diff = str2len - str1len
+            bigger = 2
+        #print(diff, bigger,str1len,str2len)
+        if bigger == 1:
+            for letter in range(str2len):
+                res.append(word1[letter])
+                res.append(word2[letter])
+        else:
+            for letter in range(str1len):
+                res.append(word1[letter])
+                res.append(word2[letter])
+        #print(diff, bigger)
+        if (diff > 0):
+            #print(diff,bigger)
+            if bigger == 1:
+                #print(diff,bigger,'1')
+                for letter in range(str2len,(str2len+diff)):
+                    #print(word1[letter])
+                    res.append(word1[letter])
+            else:
+                #print(diff,bigger,'2')
+                for letter in range(str1len,(str1len+diff)):
+                    #print(word2[letter])
+                    res.append(word2[letter])
+        resul = ''.join(res)
+        return resul
+                
