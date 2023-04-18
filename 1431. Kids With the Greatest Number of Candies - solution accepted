@@ -1,0 +1,21 @@
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        """
+        :type candies: List[int]
+        :type extraCandies: int
+        :rtype: List[bool]
+        """
+
+        res = []
+        count = 0
+        most = max(candies)
+        for kid in candies:
+            if kid + extraCandies >= most:
+                candies[count] = 1
+            else:
+                candies[count] = 0
+            count += 1
+        return candies
+        
+# https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/935782634/
+# created by Luiz Paulo Oliveira Pereira da Silveira at apr/2023
